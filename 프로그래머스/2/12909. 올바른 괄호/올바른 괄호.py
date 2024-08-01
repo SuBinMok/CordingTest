@@ -1,14 +1,14 @@
 from collections import deque
 def solution(s):
-    q = deque()
+    queue = deque()
     for i in s:
-        if i == '(':
-            q.append(i)
-        elif i == ')' and len(q) > 0:
-            q.popleft()
-        elif i == ')' and len(q) == 0:
+        if i == "(":
+            queue.append(i)
+        elif i == ")" and len(queue) > 0:
+            queue.popleft()
+        elif i == ")" and len(queue) == 0:
             return False
-    if len(q) != 0:
+    if len(queue) != 0:
         return False
     else:
         return True
