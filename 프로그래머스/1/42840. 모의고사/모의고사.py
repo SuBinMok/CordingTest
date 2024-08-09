@@ -12,17 +12,7 @@ def solution(answers):
         if j == p3[i%len(p3)]:
             a[2] +=1
     
-    if a[0] == a[1] == a[2]:
-        return [1, 2, 3]
-    elif a[0] == a[1] and a[0] > a[2]:
-        return [1, 2]
-    elif a[0] == a[2] and a[0] > a[1]:
-        return [1, 3]
-    elif a[1] == a[2] and a[1] > a[0]:
-        return [2, 3]
-    elif a[0] > a[1] and a[0] > a[2]:
-        return [1]
-    elif a[1] > a[0] and a[1] > a[2]:
-        return [2]
-    elif a[2] > a[1] and a[2] > a[0]:
-        return [3]
+    for i, j in enumerate(a):
+        if j == max(a):
+            answer.append(i+1)
+    return answer
