@@ -17,19 +17,19 @@ def solution(maps):
         if 0 <= x - 1 < n and 0 <= y < m and maps[x-1][y] == 1 and visited[x-1][y] == 1:
             #상
             queue.append([move+1, x-1, y])
-            visited[x-1][y] = move
+            visited[x-1][y] = move+1
         if 0 <= x + 1 < n and 0 <= y < m and maps[x+1][y] == 1 and visited[x+1][y] == 1:
             #하
             queue.append([move+1, x+1, y])
-            visited[x+1][y] = move
+            visited[x+1][y] = move+1
         if 0 <= x < n and 0 <= y - 1 < m and maps[x][y-1] == 1 and visited[x][y-1] == 1:
             #좌
             queue.append([move+1, x, y-1])
-            visited[x][y-1] = move
+            visited[x][y-1] = move+1
         if 0 <= x < n and 0 <= y + 1 < m and maps[x][y+1] == 1 and visited[x][y+1] == 1:
             #우
             queue.append([move+1, x, y+1])
-            visited[x][y+1] = move
+            visited[x][y+1] = move+1
     if visited[n-1][m-1] != 1:
         return answer
     else: 
