@@ -1,13 +1,13 @@
-import sys
 from collections import deque
+import sys
 n = int(sys.stdin.readline())
-q = deque(i+1 for i in range(n))
-while q:
-    if len(q) == 1:
-        x = q.popleft()
-        print(x)
+arr = deque()
+for i in range(n):
+    arr.append(i+1)
+while 1:
+    if len(arr) == 1:
+        print(arr.popleft())
         break
     else:
-        q.popleft()
-        next = q.popleft()
-        q.append(next)
+        arr.popleft()
+        arr.append(arr.popleft())
