@@ -1,12 +1,10 @@
 import sys
-input = sys.stdin.readline
-n = int(input())
-arr = list(map(int, input().split()))
-arr2 = sorted(list(set(arr)))
-dic = {}
-for idx, item in enumerate(arr2):
-    dic[item] = idx 
-    #arr2는 sorted 되어 있음, 따라서 item 보다 작은 숫자의 갯수는 idx가 됨.
 
-for item in arr:
-    print(dic[item], end=" ")
+
+n = int(sys.stdin.readline())
+a_list = list(map(int, sys.stdin.readline().split()))
+sort_a = sorted(list(set(a_list)))
+dic = {sort_a[i]: i for i in range(len(sort_a))}
+
+for i in a_list:
+    print(dic[i], end= ' ')
