@@ -1,9 +1,15 @@
-n, limit_num = map(int, input().split())
-n_list = list(map(int, input().split()))
-result = 0
-for i in range(n):
-    for j in range(n):
-        for k in range(n):
-            if i != j and i != k and j != k and result <= n_list[i]+n_list[j]+n_list[k] <= limit_num:
-                result = n_list[i]+n_list[j]+n_list[k]
-print(result)
+import sys
+
+N, M = map(int, sys.stdin.readline().split())
+arr = list(map(int, sys.stdin.readline().split()))
+
+answer = 0
+cnt = 1
+temp = 0
+
+for i in range(N):
+    for j in range(N):
+        for k in range(N):
+            if i != j and i != k and j !=k and answer <=  arr[i]+arr[j]+arr[k] <= M:
+                answer = arr[i] + arr[j] + arr[k]
+print(answer)
